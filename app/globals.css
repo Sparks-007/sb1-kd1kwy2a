@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 217 19% 27%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 217 19% 27%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 217 19% 27%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+    
+    --radius: 0.5rem;
+
+    /* Chart Colors */
+    --chart-1: 221 83% 53%;
+    --chart-2: 142 76% 36%;
+    --chart-3: 35 92% 65%;
+    --chart-4: 0 84% 60%;
+    --chart-5: 262 83% 58%;
+
+    /* Score Colors */
+    --score-excellent: 142 76% 36%;
+    --score-good: 221 83% 53%;
+    --score-moderate: 35 92% 65%;
+    --score-low: 0 84% 60%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    
+    --card: 217 19% 27%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 217 19% 27%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+    
+    --secondary: 217 19% 27%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 217 19% 27%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 217 19% 27%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: 224 76% 48%;
+
+    /* Chart Colors - Dark Mode */
+    --chart-1: 217 91% 60%;
+    --chart-2: 142 71% 45%;
+    --chart-3: 35 92% 65%;
+    --chart-4: 0 84% 60%;
+    --chart-5: 262 83% 58%;
+
+    /* Score Colors - Dark Mode */
+    --score-excellent: 142 71% 45%;
+    --score-good: 217 91% 60%;
+    --score-moderate: 35 92% 65%;
+    --score-low: 0 84% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: 
+      radial-gradient(circle at 1px 1px, hsl(221 83% 53% / 0.05) 1px, transparent 0),
+      linear-gradient(to right, hsl(221 83% 53% / 0.02), hsl(221 83% 53% / 0.02));
+    background-size: 24px 24px, 100% 100%;
+  }
+  
+  .dark body {
+    background-image: 
+      radial-gradient(circle at 1px 1px, hsl(221 83% 53% / 0.1) 1px, transparent 0),
+      linear-gradient(to right, hsl(221 83% 53% / 0.05), hsl(221 83% 53% / 0.05));
+  }
+}
+
+@layer components {
+  .score-excellent {
+    @apply text-emerald-500;
+  }
+  .score-good {
+    @apply text-blue-500;
+  }
+  .score-moderate {
+    @apply text-amber-500;
+  }
+  .score-low {
+    @apply text-rose-500;
+  }
+
+  .bg-score-excellent {
+    @apply bg-emerald-500;
+  }
+  .bg-score-good {
+    @apply bg-blue-500;
+  }
+  .bg-score-moderate {
+    @apply bg-amber-500;
+  }
+  .bg-score-low {
+    @apply bg-rose-500;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: animate-in 0.3s ease-out;
+  }
+  
+  .slide-in-from-top {
+    animation: slide-in-from-top 0.3s ease-out;
+  }
+}
+
+@keyframes animate-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-top {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
